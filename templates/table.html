@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Logs</title>
+</head>
+
+<body>
+  <h1>Service Logs</h1>
+
+  <table border="1">
+    <tr>
+      <th>Sender</th>
+      <th>AccessDate</th>
+      <th>AppType</th>
+      <th>Status</th>
+    </tr>
+
+    {% for record in data %}
+      <tr>
+        <!-- NOTE: we use the object attributes / getters to access the values -->
+        <td>{{ record.Sender }}</td>
+        <td>{{ record.AccessDate }}</td>
+        <td>{{ record.getAppType() }}</td>
+        <td>{{ record.getSuccess() }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+</body>
+
+</html>
